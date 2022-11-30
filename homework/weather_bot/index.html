@@ -7,13 +7,13 @@
     <title>Bot</title>
 </head>
 <body>
-    <h1>Bot</h1>
+    <h1>Weather bot</h1>
     <form action="telegram.php" method="post">
-        <input type="text" name="name">
-        <input type="text" name="phone">
-        <input type="text" name="email">
-        <textarea name="text" id="" cols="30" rows="10"></textarea>
-        <input type="submit" value="send">
+        <label for="city">
+            Enter your city: 
+            <input type="text" name="city">
+        </label><br>
+        <input type="submit" value="Get" name="submit">
      </form>
 </body>
 </html>
