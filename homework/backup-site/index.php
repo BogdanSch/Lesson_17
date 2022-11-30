@@ -18,7 +18,7 @@ date_default_timezone_set("Europe/Kiev");
 
 $archive_dir = "backups/";
 $zip = new ZipArchive();
-$backupName = $archive_dir . "backup_".date("d_m_Y_i_s").".zip";
+$backupName = $archive_dir . "backup_".date("d_m_Y_G_i_s").".zip";
 if ($zip->open($backupName, ZipArchive::CREATE) === TRUE) {
   foreach ($paths as $key => $value) {
     if (!is_dir($value)) {
