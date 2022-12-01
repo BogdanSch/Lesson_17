@@ -12,11 +12,20 @@ function rscandir($base = '', &$data = array()) {
  return $data;
 }
 
+function check_folder($folder){
+  if(is_dir($folder)) return true;
+  return false;
+}
+
 $paths = rscandir("site/");
 header('Content-Type: text/html; charset=utf-8');
 date_default_timezone_set("Europe/Kiev");
 
 $archive_dir = "backups/";
+
+if(!check_folder($archive_dir)){
+  mkdir($archive_dir);
+}
 $zip = new ZipArchive();
 $backupName = $archive_dir . "backup_".date("d_m_Y_G_i_s").".zip";
 if ($zip->open($backupName, ZipArchive::CREATE) === TRUE) {
